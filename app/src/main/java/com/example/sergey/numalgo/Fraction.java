@@ -20,9 +20,7 @@ public class Fraction {
 
     private void Normalize(){
         if (this.numerator == 0)
-        {
             this.denominator = 1;
-        }
         else
         {
             long nd = NOD(this.numerator, this.denominator);
@@ -161,7 +159,25 @@ public class Fraction {
         return Mult(fr, Invert(fr1));
     }
     public static boolean Equal(Fraction fr1,Fraction fr2){
-
         return fr1.numerator == fr2.numerator && fr1.denominator == fr2.denominator;
+    }
+
+    public static boolean MoreThen(Fraction fr1,Fraction fr2){
+        long nk = NOK(fr1.denominator, fr2.denominator);
+        long n1 = fr1.numerator * (nk / fr1.denominator);
+        long n2 = fr2.numerator * (nk / fr2.denominator);
+        return n1 > n2;
+    }
+    public static boolean MoreOrEqualThen(Fraction fr1,Fraction fr2){
+        long nk = NOK(fr1.denominator, fr2.denominator);
+        long n1 = fr1.numerator * (nk / fr1.denominator);
+        long n2 = fr2.numerator * (nk / fr2.denominator);
+        return n1 >= n2;
+    }
+    public static boolean LessThen(Fraction fr1,Fraction fr2){
+        return !MoreOrEqualThen(fr1, fr2);
+    }
+    public static boolean LessOrEqualThen(Fraction fr1,Fraction fr2){
+        return !MoreThen(fr1, fr2);
     }
 }
