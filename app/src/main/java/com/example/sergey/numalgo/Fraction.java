@@ -1,8 +1,5 @@
 package com.example.sergey.numalgo;
 
-import android.print.PrinterId;
-import android.widget.Toast;
-
 public class Fraction {
     private long numerator;
     private long denominator;
