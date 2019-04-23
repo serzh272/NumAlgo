@@ -1,4 +1,4 @@
-package com.example.sergey.numalgo;
+package com.example.mymath;
 
 public class Fraction {
     private long numerator;
@@ -78,7 +78,17 @@ public class Fraction {
 
             }
         }
-        else
+        else if(str.indexOf('.') != -1||str.indexOf(',') != -1){
+            str = str.replace('.','/');
+            str = str.replace(',','/');
+            String[] num_denom = str.split("/");
+            this.numerator = Long.valueOf(num_denom[0]+num_denom[1]);
+            this.denominator = (long) Math.pow(10, num_denom[1].length());
+            this.Normalize();
+        }else if(str.equals("")){
+            this.numerator = 0;
+            this.denominator = 1;
+        }else
         {
              this.numerator = Long.valueOf(str);
              this.denominator = 1;
@@ -159,6 +169,18 @@ public class Fraction {
         return fr1.numerator == fr2.numerator && fr1.denominator == fr2.denominator;
     }
 
+    public static boolean Equal(Fraction fr1,int fr2){
+        fr1.Normalize();
+        return fr1.numerator == fr2 && fr1.denominator == 1;
+    }
+
+    public Fraction Copy(){
+        Fraction fr = new Fraction();
+        fr.numerator = this.numerator;
+        fr.denominator = this.denominator;
+        return fr;
+    }
+
     public static boolean MoreThen(Fraction fr1,Fraction fr2){
         long nk = NOK(fr1.denominator, fr2.denominator);
         long n1 = fr1.numerator * (nk / fr1.denominator);
@@ -174,7 +196,22 @@ public class Fraction {
     public static boolean LessThen(Fraction fr1,Fraction fr2){
         return !MoreOrEqualThen(fr1, fr2);
     }
+
     public static boolean LessOrEqualThen(Fraction fr1,Fraction fr2){
         return !MoreThen(fr1, fr2);
+    }
+
+    public Fraction Power(int power)
+    {
+        Fraction rez = new Fraction(1, 1);
+        for (int i = 0; i < power; i++)
+        {
+            rez = Fraction.Mult(rez, this);
+        }
+        return rez;
+    }
+
+    public double ToDouble(){
+        return this.numerator/this.denominator;
     }
 }

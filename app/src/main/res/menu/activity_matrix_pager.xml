@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_item_transpose"
+        android:title="Transpose" />
+    <item
+        android:id="@+id/menu_item_determinant"
+        android:title="Determinant" />
+    <item
+        android:id="@+id/menu_item_invert"
+        android:title="Invert" />
+    <item
+        android:id="@+id/menu_item_frobenius"
+        android:title="Frobenius matrix" />
+    <item
+        android:id="@+id/menu_item_top_tri"
+        android:title="Top triangle" />
+    <item
+        android:id="@+id/menu_item_bot_tri"
+        android:title="Bottom triangle" />
+    <item
+        android:id="@+id/menu_item_gersh"
+        android:title="Gershgorin circles" />
+    <item
+        android:id="@+id/menu_item_clear"
+        android:title="Clear" />
+    <item
+        android:id="@+id/menu_item_resetall"
+        android:title="Reset all" />
+</menu>

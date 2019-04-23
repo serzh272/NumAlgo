@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyMath</string>
+    <string name="square_matrix_required_exception">Matrix should be square</string>
+    <string name="square_matrix_required">Matrix should be square</string>
+</resources>

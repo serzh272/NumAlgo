@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MatrixLayout">
+        <attr name="rows" format="integer"/>
+        <attr name="columns" format="integer"/>
+        <attr name="spacing" format="dimension"/>
+        <attr name="matrix" format="reference"/>
+    </declare-styleable>
+</resources>
